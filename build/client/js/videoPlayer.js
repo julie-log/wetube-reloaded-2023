@@ -88,7 +88,7 @@ var handleMouseLeave = function handleMouseLeave() {
 };
 var handleEnded = function handleEnded() {
   var id = videoContainer.dataset.id;
-  fetch("/api/videos/".concat(id, "/view"), {
+  fetch("/api/videos/" + id + "/view", {
     method: "POST"
   });
 };

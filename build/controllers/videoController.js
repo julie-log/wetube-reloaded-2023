@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.watch = exports.search = exports.registerView = exports.postUpload = exports.postEdit = exports.home = exports.getUpload = exports.getEdit = exports.deleteVideo = exports.createComment = void 0;
+exports.watch = exports.search = exports.registerView = exports.postUpload = exports.postEdit = exports.home = exports.getUpload = exports.getEdit = exports.deleteVideo = exports.deleteComment = exports.createComment = void 0;
 var _Video = _interopRequireDefault(require("../models/Video"));
 var _Comment = _interopRequireDefault(require("../models/Comment"));
 var _User = _interopRequireDefault(require("../models/User"));
@@ -386,3 +386,54 @@ var createComment = /*#__PURE__*/function () {
   };
 }();
 exports.createComment = createComment;
+var deleteComment = /*#__PURE__*/function () {
+  var _ref10 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10(req, res) {
+    var _id, commentId, comment, videoId, video;
+    return regeneratorRuntime.wrap(function _callee10$(_context10) {
+      while (1) {
+        switch (_context10.prev = _context10.next) {
+          case 0:
+            _id = req.session.user._id, commentId = req.params.commentId;
+            _context10.next = 3;
+            return _Comment["default"].findById(commentId).populate("owner");
+          case 3:
+            comment = _context10.sent;
+            videoId = comment.video;
+            console.log("comment : " + comment);
+            console.log("videoId : " + videoId);
+            if (!(String(_id) !== String(comment.owner._id))) {
+              _context10.next = 9;
+              break;
+            }
+            return _context10.abrupt("return", res.sendStatus(404));
+          case 9:
+            _context10.next = 11;
+            return _Video["default"].findById(videoId);
+          case 11:
+            video = _context10.sent;
+            if (video) {
+              _context10.next = 14;
+              break;
+            }
+            return _context10.abrupt("return", res.sendStatus(404));
+          case 14:
+            video.comments.splice(video.comments.indexOf(commentId), 1);
+            _context10.next = 17;
+            return video.save();
+          case 17:
+            _context10.next = 19;
+            return _Comment["default"].findByIdAndDelete(commentId);
+          case 19:
+            return _context10.abrupt("return", res.sendStatus(200));
+          case 20:
+          case "end":
+            return _context10.stop();
+        }
+      }
+    }, _callee10);
+  }));
+  return function deleteComment(_x19, _x20) {
+    return _ref10.apply(this, arguments);
+  };
+}();
+exports.deleteComment = deleteComment;

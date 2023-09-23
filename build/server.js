@@ -36,6 +36,7 @@ app.use((0, _expressFlash["default"])());
 app.use(_middlewares.localsMiddleware);
 app.use("/uploads", _express["default"]["static"]("uploads"));
 app.use("/static", _express["default"]["static"]("assets"));
+app.use("/ffmpeg", _express["default"]["static"]("node_modules/@ffmpeg/core/dist"));
 app.use("/", _rootRouter["default"]);
 app.use("/videos", _videoRouter["default"]);
 app.use("/users", _userRouter["default"]);
