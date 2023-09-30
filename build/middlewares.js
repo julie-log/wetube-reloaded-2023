@@ -17,17 +17,17 @@ var s3 = new _awsSdk["default"].S3({
 var isHeroku = process.env.NODE_ENV === "production";
 var s3ImageUploader = (0, _multerS["default"])({
   s3: s3,
-  bucket: "wetubeee/images",
+  bucket: "wetubejrloggg/images",
   acl: "public-read"
 });
 var s3VideoUploader = (0, _multerS["default"])({
   s3: s3,
-  bucket: "wetubeee/videos",
+  bucket: "wetubejrloggg/videos",
   acl: "public-read"
 });
 var localsMiddleware = function localsMiddleware(req, res, next) {
   res.locals.loggedIn = Boolean(req.session.loggedIn);
-  res.locals.siteName = "Wetube";
+  res.locals.siteName = "BND";
   res.locals.loggedInUser = req.session.user || {};
   res.locals.isHeroku = isHeroku;
   next();

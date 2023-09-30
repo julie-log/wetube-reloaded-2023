@@ -30,7 +30,7 @@ var userSchema = new _mongoose["default"].Schema({
   },
   name: {
     type: String,
-    required: true
+    required: false
   },
   location: String,
   comments: [{

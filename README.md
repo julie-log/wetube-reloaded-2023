@@ -1,16 +1,14 @@
-# Wetube Reloaded
+# Wetube Reloaded 2023
 
-/ -> Home
-/join -> Join
-/login -> Login
-/search -> Search
+졸업 과제를 위한 수정사항
 
-/users/:id -> See User
-/users/logout -> Log Out
-/users/edit -> Edit MY Profile
-/users/delete -> Delete MY Profile
-
-/videos/:id -> See Video
-/videos/:id/edit -> Edit Video
-/videos/:id/delete -> Delete Video
-/videos/upload -> Upload Video
+1. modify user profile image link
+2. player error
+3. logout error
+4. add users
+5. add videos
+6. modify layout
+7. shorts area - swipe?
+8. modify video detail page
+   1. detail info
+   2. comments area

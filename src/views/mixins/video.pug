@@ -4,5 +4,6 @@ mixin video(video)
         div.video-mixin__data
             span.video-mixin__title=video.title
             div.video-mixin__meta
-                span #{video.owner.name} • 
-                span #{video.meta.views} 회
+                p 
+                    i.far.fa-user-circle  #{video.owner.name} 
+                p 조회수 #{video.meta.views} 회 • #{new Date(video.createdAt).toLocaleString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})}

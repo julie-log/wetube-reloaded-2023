@@ -6,7 +6,7 @@
   input {
     all: unset;
     padding: 15px 20px;
-    border-radius: 5px;
+    border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: black;
     margin-bottom: 5px;
@@ -16,8 +16,6 @@
   }
   button {
     all: unset;
-  }
-  button {
     position: absolute;
     right: 15px;
     font-size: 18px;

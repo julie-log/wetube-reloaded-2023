@@ -4,7 +4,7 @@
   flex-direction: column;
   .video__title {
     font-size: 26px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
   .video__createdAt {
     font-size: 12px;
@@ -17,11 +17,22 @@
       text-decoration: underline;
     }
   }
+  .video__edit {
+    display: flex;
+    margin-top: 20px;
+    .button {
+      background-color: white;
+      padding: 10px;
+      border-radius: 4px;
+      margin-right: 10px;
+      color: #333;
+    }
+  }
 }
 .video__comments {
   display: flex;
   flex-direction: column;
-  max-width: 320px;
+  max-width: 420px;
   width: 100%;
   margin: 0 auto;
   margin-top: 20px;
@@ -31,5 +42,19 @@
     background-color: white;
     color: black;
     margin-bottom: 10px;
+  }
+}
+
+.video__comment-form {
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  button {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
   }
 }
